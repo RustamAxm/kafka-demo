@@ -1,0 +1,27 @@
+[project]
+name = "py-kafka"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "rustam", email = "rustamaxm@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "kafka-python>=2.0.6",
+    "loguru>=0.7.3",
+]
+
+[project.scripts]
+producer = "py_kafka.producer:main"
+consumer = "py_kafka.consumer:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "ruff>=0.9.10",
+]
