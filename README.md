@@ -41,3 +41,36 @@ rustam@rustam-zenbook:~/kafka_demo/py-kafka$ uv run consumer
 2025-03-08 18:54:43.874 | INFO     | py_kafka.consumer:main:18 - {"message": "Hello, Kafka! - test 0"}
 2025-03-08 18:54:43.874 | INFO     | py_kafka.consumer:main:18 - {"message": "Hello, Kafka! - test 1"}
 ```
+
+## rust
+create new topic
+```
+rustam@rustam-zenbook:~/kafka_demo$ docker exec kafka kafka-topics --bootstrap-server kafka:29092  --create --topic rustStories
+Created topic rustStories.
+```
+check list 
+```
+rustam@rustam-zenbook:~/kafka_demo$ docker exec kafka kafka-topics --bootstrap-server kafka:29092  --list 
+rustStories
+test
+```
+write msg once
+```
+rustam@rustam-zenbook:~/kafka_demo/rust_kafka$ cargo run --bin producer
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running `target/debug/producer`
+About to publish a message at ["localhost:29092"] to: rustStories
+```
+get msg in loop 
+```
+rustam@rustam-zenbook:~/kafka_demo/rust_kafka$ cargo run --bin consumer
+   Compiling rust_kafka v0.1.0 (/home/rustam/kafka_demo/rust_kafka)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.66s
+     Running `target/debug/consumer`
+rustStories:0@0: [114, 117, 115, 116, 44, 32, 107, 97, 102, 107, 97]
+rustStories:0@1: [114, 117, 115, 116, 44, 32, 107, 97, 102, 107, 97]
+rustStories:0@2: [114, 117, 115, 116, 44, 32, 107, 97, 102, 107, 97]
+rustStories:0@3: [114, 117, 115, 116, 44, 32, 107, 97, 102, 107, 97]
+
+```
+
