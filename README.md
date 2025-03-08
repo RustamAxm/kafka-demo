@@ -67,10 +67,8 @@ rustam@rustam-zenbook:~/kafka_demo/rust_kafka$ cargo run --bin consumer
    Compiling rust_kafka v0.1.0 (/home/rustam/kafka_demo/rust_kafka)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.66s
      Running `target/debug/consumer`
-rustStories:0@0: [114, 117, 115, 116, 44, 32, 107, 97, 102, 107, 97]
-rustStories:0@1: [114, 117, 115, 116, 44, 32, 107, 97, 102, 107, 97]
-rustStories:0@2: [114, 117, 115, 116, 44, 32, 107, 97, 102, 107, 97]
-rustStories:0@3: [114, 117, 115, 116, 44, 32, 107, 97, 102, 107, 97]
+rustStories:0@6: "rust, kafka"
+rustStories:0@7: "rust, kafka"
 
 ```
 

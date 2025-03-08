@@ -33,7 +33,7 @@ fn consume_messages(group: String, topic: String, brokers: Vec<String>) -> Resul
                     ms.topic(),
                     ms.partition(),
                     m.offset,
-                    m.value
+                    String::from_utf8_lossy(m.value)
                 );
             }
             let _ = con.consume_messageset(ms);
