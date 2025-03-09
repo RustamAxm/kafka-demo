@@ -71,4 +71,26 @@ rustStories:0@6: "rust, kafka"
 rustStories:0@7: "rust, kafka"
 
 ```
-
+## golang
+```
+cd golang-kafka
+go mod init golang-kafka
+go get  github.com/confluentinc/confluent-kafka-go/kafka
+```
+producer
+```
+rustam@rustam-zenbook:~/kafka_demo/golang-kafka$ go run src/producer.go 
+message 1
+message 2
+message 3
+Delivered message to topic-name[0]@102
+Delivered message to topic-name[0]@103
+Delivered message to topic-name[0]@104
+```
+consumer
+```
+rustam@rustam-zenbook:~/kafka_demo/golang-kafka$ go run src/consumer.go 
+Message on topic-name[0]@102: message 1
+Message on topic-name[0]@103: message 2
+Message on topic-name[0]@104: message 3
+```
